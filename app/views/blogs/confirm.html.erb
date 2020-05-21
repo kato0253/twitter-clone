@@ -1,0 +1,8 @@
+<h3>送信</h3>
+<%= form_with(model: @blog, local: true) do |form| %>
+  <%= form.text_field :title %>
+  <%= form.text_field :content %>
+  <p>タイトル:<%= @blog.title %></p>
+  <p>本文:<%= @blog.content %></p>
+  <%= form.submit  "登録" %>
+<% end %>
