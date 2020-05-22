@@ -17,6 +17,7 @@ class BlogsController < ApplicationController
   def confirm
 
     @blog = Blog.new(blog_params)
+    render :new if @blog.invalid?
 
   end
 
@@ -24,7 +25,7 @@ class BlogsController < ApplicationController
 
     @blog = Blog.new(blog_params)
     if @blog.save
-      redirect_to new_blog_path
+      redirect_to new_blog_path, notice:"ブログを作成しました！"
       else
       render :"new"
     end
@@ -34,7 +35,7 @@ class BlogsController < ApplicationController
   def destroy
 
     @blog.destroy
-    redirect_to new_blog_path
+    redirect_to blogs_path,notice:"ブログを削除しました！"
 
   end
 
@@ -45,7 +46,7 @@ class BlogsController < ApplicationController
   def update
 
     if @blog.update(blog_params)
-      redirect_to blogs_path
+      redirect_to blogs_path,notice: "ブログを編集しました！"
     else
       render :edit
     end
