@@ -15,14 +15,21 @@
   <head>
     <meta charset="UTF-8">
     <title>TwitterClone</title>
-      <div class="title">
   </head>
+  <img src="../images/header.jpg" class="image">
   <body>
-        <%= form.label :内容 %>
-        <%= form.text_field :content %>
-      </div>
-      <%= form.submit %>
+  <header>
+    <%= "入力して下さい" %>
+  </header>
+  <div class="title">
+    <%= form.label :内容 %>
+    <%= form.text_field :content %>
+  </div>
+    <%= form.submit %>
     <% end %>
     <%= link_to "一覧表示", blogs_path %>
+  <footer>
+    <%= "会社概要　問い合わせ　連絡先　"%>
+  </footer>
   </body>
 </html>
