@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root 'blogs#index'
+  root 'blogs#new'
    resources :blogs do
     collection do
       post :confirm
